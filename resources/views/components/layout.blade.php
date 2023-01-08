@@ -14,10 +14,14 @@
     <title>Guides de Montagne</title>
 </head>
 
-<body>
+<body style="padding-top: 5rem;">
+    
+    @include('partials._navbar')
+
     <main class="container">
         {{ $slot }}
     </main>
+
 </body>
 
 </html>

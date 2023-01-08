@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GuideController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+/**
+ * Guides Routes
+ * 
+ * index - Show all guides
+ * (show - Show single guide)
+ * create - Show form to create new guide
+ * store - Store new guide
+ * edit - Show form to edit guide
+ * update - Update guide
+ * destroy - Delete guide
+ */
+Route::get('/guides', [GuideController::class, 'index']);
