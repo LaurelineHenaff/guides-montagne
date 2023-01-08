@@ -1,6 +1,10 @@
 <x-layout>
 
-<h1>Liste des Guides</h1>
+<h1 class="mb-4">Liste des Guides</h1>
+
+<a class="btn btn-success btn-sm mb-3" href="/guides/create">
+  <i class="bi bi-plus-lg"></i> Ajouter
+</a>
 
 @if (count($guides) > 0)
   <table class="table table-sm align-middle table-hover">

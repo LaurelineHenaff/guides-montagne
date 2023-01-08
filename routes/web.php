@@ -30,3 +30,5 @@ Route::get('/', function () {
  * destroy - Delete guide
  */
 Route::get('/guides', [GuideController::class, 'index']);
+Route::get('/guides/create', [GuideController::class, 'create']);
+Route::post('/guides', [GuideController::class, 'store']);
