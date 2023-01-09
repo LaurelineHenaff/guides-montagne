@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Sommet extends Model
 {
     use HasFactory;
+
+    protected $primaryKey = 'code_Sommets';
 }
