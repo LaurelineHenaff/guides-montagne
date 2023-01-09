@@ -10,7 +10,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-    <title>Guides de Montagne</title>
+    <title>La Compagnie des Guides</title>
 </head>
 
 <body style="padding-top: 5rem;">

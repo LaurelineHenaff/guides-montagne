@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GuideController;
 use App\Http\Controllers\SommetController;
+use App\Http\Controllers\ValleeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,3 +55,21 @@ Route::post('/sommets', [SommetController::class, 'store']);
 Route::get('/sommets/{sommet}/edit', [SommetController::class, 'edit']);
 Route::put('/sommets/{sommet}', [SommetController::class, 'update']);
 Route::delete('/sommets/{sommet}', [SommetController::class, 'delete']);
+
+/**
+ * Vallees Routes
+ * 
+ * index - Show all vallees
+ * (show - Show single vallee)
+ * create - Show form to create new vallee
+ * store - Store new vallee in database
+ * edit - Show form to edit vallee
+ * update - Update vallee in database
+ * destroy - Delete vallee from database
+ */
+Route::get('/vallees', [ValleeController::class, 'index']);
+Route::get('/vallees/create', [ValleeController::class, 'create']);
+Route::post('/vallees', [ValleeController::class, 'store']);
+Route::get('/vallees/{vallee}/edit', [ValleeController::class, 'edit']);
+Route::put('/vallees/{vallee}', [ValleeController::class, 'update']);
+Route::delete('/vallees/{vallee}', [ValleeController::class, 'delete']);

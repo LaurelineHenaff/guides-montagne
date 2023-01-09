@@ -21,6 +21,9 @@
           <li class="nav-item">
             <a class="nav-link" href="/sommets">Sommets</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/vallees">Vallées</a>
+          </li>
           {{-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
             <ul class="dropdown-menu">

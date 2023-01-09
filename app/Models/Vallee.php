@@ -10,4 +10,6 @@ class Vallee extends Model
     use HasFactory;
 
     protected $primaryKey = 'code_Vallees';
+
+    protected $fillable = ['nom_Vallees'];
 }

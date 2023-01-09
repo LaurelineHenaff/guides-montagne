@@ -139,7 +139,7 @@ return [
     'starts_with' => 'The :attribute must start with one of the following: :values.',
     'string' => 'The :attribute must be a string.',
     'timezone' => 'The :attribute must be a valid timezone.',
-    'unique' => 'The :attribute has already been taken.',
+    'unique' => 'Le champ :attribute est déjà utilisé.',
     'uploaded' => 'The :attribute failed to upload.',
     'uppercase' => 'The :attribute must be uppercase.',
     'url' => 'The :attribute must be a valid URL.',
@@ -183,6 +183,9 @@ return [
         // Nom des champs pour les formulaires des sommets.
         'nom_Sommets' => "'Nom'",
         'altitude_Sommets' => "'Altitude'",
+
+        // Nom des champs pour les formulaires des vallées.
+        'nom_Vallees' => "'Nom'",
     ],
 
 ];
