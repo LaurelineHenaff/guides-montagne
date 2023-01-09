@@ -68,7 +68,7 @@ return [
     'image' => 'The :attribute must be an image.',
     'in' => 'The selected :attribute is invalid.',
     'in_array' => 'The :attribute field does not exist in :other.',
-    'integer' => 'The :attribute must be an integer.',
+    'integer' => 'Le champ :attribute doit être un entier.',
     'ip' => 'The :attribute must be a valid IP address.',
     'ipv4' => 'The :attribute must be a valid IPv4 address.',
     'ipv6' => 'The :attribute must be a valid IPv6 address.',
@@ -77,20 +77,20 @@ return [
     'lt' => [
         'array' => 'The :attribute must have less than :value items.',
         'file' => 'The :attribute must be less than :value kilobytes.',
-        'numeric' => 'The :attribute must be less than :value.',
+        'numeric' => 'Le champ :attribute doit être inférieur à :value.',
         'string' => 'The :attribute must be less than :value characters.',
     ],
     'lte' => [
         'array' => 'The :attribute must not have more than :value items.',
         'file' => 'The :attribute must be less than or equal to :value kilobytes.',
-        'numeric' => 'The :attribute must be less than or equal to :value.',
+        'numeric' => 'Le champ :attribute doit être inférieur ou égal à :value.',
         'string' => 'The :attribute must be less than or equal to :value characters.',
     ],
     'mac_address' => 'The :attribute must be a valid MAC address.',
     'max' => [
         'array' => 'The :attribute must not have more than :max items.',
         'file' => 'The :attribute must not be greater than :max kilobytes.',
-        'numeric' => 'The :attribute must not be greater than :max.',
+        'numeric' => 'Le champ :attribute ne doit pas être supérieur à :max.',
         'string' => 'The :attribute must not be greater than :max characters.',
     ],
     'max_digits' => 'The :attribute must not have more than :max digits.',
@@ -179,6 +179,10 @@ return [
         'nom_Guides' => "'Nom'",
         'email_Guides' => "'E-mail'",
         'motdepasse_Guides' => "'Mot de passe'",
+
+        // Nom des champs pour les formulaires des sommets.
+        'nom_Sommets' => "'Nom'",
+        'altitude_Sommets' => "'Altitude'",
     ],
 
 ];

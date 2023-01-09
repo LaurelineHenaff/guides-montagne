@@ -10,4 +10,9 @@ class Sommet extends Model
     use HasFactory;
 
     protected $primaryKey = 'code_Sommets';
+
+    protected $fillable = [
+        'nom_Sommets',
+        'altitude_Sommets',
+    ];
 }

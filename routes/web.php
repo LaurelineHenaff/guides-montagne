@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\GuideController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GuideController;
+use App\Http\Controllers\SommetController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +36,21 @@ Route::post('/guides', [GuideController::class, 'store']);
 Route::get('/guides/{guide}/edit', [GuideController::class, 'edit']);
 Route::put('/guides/{guide}', [GuideController::class, 'update']);
 Route::delete('/guides/{guide}', [GuideController::class, 'delete']);
+
+/**
+ * Sommets Routes
+ * 
+ * index - Show all sommets
+ * (show - Show single sommet)
+ * create - Show form to create new sommet
+ * store - Store new sommet in database
+ * edit - Show form to edit sommet
+ * update - Update sommet in database
+ * destroy - Delete sommet from database
+ */
+Route::get('/sommets', [SommetController::class, 'index']);
+Route::get('/sommets/create', [SommetController::class, 'create']);
+Route::post('/sommets', [SommetController::class, 'store']);
+Route::get('/sommets/{sommet}/edit', [SommetController::class, 'edit']);
+Route::put('/sommets/{sommet}', [SommetController::class, 'update']);
+Route::delete('/sommets/{sommet}', [SommetController::class, 'delete']);

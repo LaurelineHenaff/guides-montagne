@@ -41,7 +41,7 @@
     </tbody>
   </table>
 @else
-  <div class="alert alert-info">Aucun musicien.</div>
+  <div class="alert alert-info">Aucun guide.</div>
 @endif
 
 </x-layout>
