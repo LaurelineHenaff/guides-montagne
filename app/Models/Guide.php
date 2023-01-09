@@ -16,5 +16,5 @@ class Guide extends Model
         'motdepasse_Guides',
     ];
 
-    protected $primaryKey = "code_Guides";
+    protected $primaryKey = 'code_Guides';
 }

@@ -7,16 +7,6 @@ use Illuminate\Http\Request;
 
 class GuideController extends Controller
 {
-    /** 
-     * Validation rules used for form data.
-     */
-    private static $fieldsValidationRules = [
-        'prenom_Guides' => 'nullable|max:255',
-        'nom_Guides' => 'required|max:255',
-        'email_Guides' => 'email|nullable',
-        'motdepasse_Guides' => 'required'
-    ];
-
     // Get and show all guides
     public function index()
     {
@@ -34,7 +24,12 @@ class GuideController extends Controller
     // Insert new guide
     public function store(Request $req)
     {
-        $fields = $req->validate(static::$fieldsValidationRules);
+        $fields = $req->validate([
+            'prenom_Guides' => 'nullable|max:255',
+            'nom_Guides' => 'required|max:255',
+            'email_Guides' => 'email|nullable|unique:guides,email_Guides',
+            'motdepasse_Guides' => 'required'
+        ]);
 
         Guide::create($fields);
 
@@ -52,7 +47,12 @@ class GuideController extends Controller
     // Update guide
     public function update(Request $req, Guide $guide)
     {
-        $fields = $req->validate(static::$fieldsValidationRules);
+        $fields = $req->validate([
+            'prenom_Guides' => 'nullable|max:255',
+            'nom_Guides' => 'required|max:255',
+            'email_Guides' => 'email|nullable|unique:guides,email_Guides,' . $guide->code_Guides . ',code_Guides',
+            'motdepasse_Guides' => 'required'
+        ]);
 
         $guide->update($fields);
 
