@@ -27,6 +27,8 @@ class GuideController extends Controller
         $fields = $req->validate([
             'prenom_Guides' => 'nullable|max:255',
             'nom_Guides' => 'required|max:255',
+            'email_Guides' => 'email|nullable',
+            'motdepasse_Guides' => 'nullable'
         ]);
 
         Guide::create($fields);

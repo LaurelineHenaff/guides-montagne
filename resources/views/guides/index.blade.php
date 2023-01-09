@@ -9,7 +9,13 @@
 @if (count($guides) > 0)
   <table class="table table-sm align-middle table-hover">
     <thead>
-      <tr><th>Id</th><th>Prénom</th><th>Nom</th><th style="width: 1%;">Actions</th></tr>
+      <tr>
+        <th>Id</th>
+        <th>Prénom</th>
+        <th>Nom</th>
+        <th>E-mail</th>
+        <th style="width: 1%;">Actions</th>
+      </tr>
     </thead>
 
     <tbody class="table-group-divider">
@@ -19,6 +25,7 @@
           <td>{{ $guide->code_Guides }}</td>
           <td>{{ $guide->prenom_Guides }}</td>
           <td>{{ $guide->nom_Guides }}</td>
+          <td>{{ $guide->email_Guides }}</td>
           <td class="d-flex gap-1">
             <a class="btn btn-primary btn-sm" href="/guides/{{ $guide->code_Guides }}/edit"><i class="bi bi-pencil"></i></a>
             <form action="/guides/{{ $guide->code_Guides }}" method="POST">

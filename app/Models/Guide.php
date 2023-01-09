@@ -12,5 +12,7 @@ class Guide extends Model
     protected $fillable = [
         'nom_Guides',
         'prenom_Guides',
+        'email_Guides',
+        'motdepasse_Guides',
     ];
 }
