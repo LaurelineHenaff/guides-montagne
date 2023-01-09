@@ -14,7 +14,7 @@ class GuideController extends Controller
         'prenom_Guides' => 'nullable|max:255',
         'nom_Guides' => 'required|max:255',
         'email_Guides' => 'email|nullable',
-        'motdepasse_Guides' => 'nullable'
+        'motdepasse_Guides' => 'required'
     ];
 
     // Get and show all guides
@@ -55,6 +55,14 @@ class GuideController extends Controller
         $fields = $req->validate(static::$fieldsValidationRules);
 
         $guide->update($fields);
+
+        return redirect('/guides');
+    }
+
+    // Delete guide
+    public function delete(Guide $guide)
+    {
+        $guide->delete();
 
         return redirect('/guides');
     }

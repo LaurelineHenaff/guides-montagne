@@ -34,3 +34,4 @@ Route::get('/guides/create', [GuideController::class, 'create']);
 Route::post('/guides', [GuideController::class, 'store']);
 Route::get('/guides/{guide}/edit', [GuideController::class, 'edit']);
 Route::put('/guides/{guide}', [GuideController::class, 'update']);
+Route::delete('/guides/{guide}', [GuideController::class, 'delete']);
