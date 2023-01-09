@@ -24,11 +24,13 @@ Route::get('/', function () {
  * index - Show all guides
  * (show - Show single guide)
  * create - Show form to create new guide
- * store - Store new guide
+ * store - Store new guide in database
  * edit - Show form to edit guide
- * update - Update guide
- * destroy - Delete guide
+ * update - Update guide in database
+ * destroy - Delete guide from database
  */
 Route::get('/guides', [GuideController::class, 'index']);
 Route::get('/guides/create', [GuideController::class, 'create']);
 Route::post('/guides', [GuideController::class, 'store']);
+Route::get('/guides/{guide}/edit', [GuideController::class, 'edit']);
+Route::put('/guides/{guide}', [GuideController::class, 'update']);

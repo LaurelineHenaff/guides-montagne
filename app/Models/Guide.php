@@ -15,4 +15,6 @@ class Guide extends Model
         'email_Guides',
         'motdepasse_Guides',
     ];
+
+    protected $primaryKey = "code_Guides";
 }
