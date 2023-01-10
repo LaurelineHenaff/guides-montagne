@@ -5,7 +5,7 @@
       @csrf
   
       <label class="form-label" for="nom_Sommets">Nom<sup>&nbsp;*</sup></label>
-      <input id="nom_Sommet" class="form-control form-control-sm mb-1" type="text" name="nom_Sommets" value="{{ old('nom_Sommets') }}">
+      <input id="nom_Sommets" class="form-control form-control-sm mb-1" type="text" name="nom_Sommets" value="{{ old('nom_Sommets') }}">
       @error('nom_Sommets')
         <p class="text-danger small mt-1 mb-0">{{ $message }}</p>
       @enderror
