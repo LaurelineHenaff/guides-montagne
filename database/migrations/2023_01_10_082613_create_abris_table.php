@@ -24,7 +24,9 @@ return new class extends Migration
             $table->float('prixNuit_Abris');
             $table->float('prixRepas_Abris')->nullable();
             $table->string('telGardien_Abris')->nullable();
-            $table->foreignId('code_Vallees')->constrained('vallees', 'code_Vallees');
+            $table->foreignId('code_Vallees')
+                ->constrained('vallees', 'code_Vallees')
+                ->onDelete('cascade');
 
             $table->timestamps();
         });
