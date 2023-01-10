@@ -21,4 +21,14 @@ class Abri extends Model
         'telGardien_Abris',
         'code_Vallees',
     ];
+
+    protected $with = ['vallee'];
+
+    /**
+     * Relation : la vallée ou se trouve l'abri.
+     */
+    public function vallee()
+    {
+        return $this->belongsTo(Vallee::class, 'code_Vallees');
+    }
 }

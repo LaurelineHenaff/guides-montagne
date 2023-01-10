@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AbriController;
 use App\Http\Controllers\GuideController;
 use App\Http\Controllers\SommetController;
 use App\Http\Controllers\ValleeController;
@@ -73,3 +74,21 @@ Route::post('/vallees', [ValleeController::class, 'store']);
 Route::get('/vallees/{vallee}/edit', [ValleeController::class, 'edit']);
 Route::put('/vallees/{vallee}', [ValleeController::class, 'update']);
 Route::delete('/vallees/{vallee}', [ValleeController::class, 'delete']);
+
+/**
+ * Abris Routes
+ * 
+ * index - Show all abris
+ * (show - Show single abri)
+ * create - Show form to create new abri
+ * store - Store new abri in database
+ * edit - Show form to edit abri
+ * update - Update abri in database
+ * destroy - Delete abri from database
+ */
+Route::get('/abris', [AbriController::class, 'index']);
+Route::get('/abris/create', [AbriController::class, 'create']);
+Route::post('/abris', [AbriController::class, 'store']);
+Route::get('/abris/{abri}/edit', [AbriController::class, 'edit']);
+Route::put('/abris/{abri}', [AbriController::class, 'update']);
+Route::delete('/abris/{abri}', [AbriController::class, 'delete']);
