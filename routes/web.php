@@ -5,6 +5,7 @@ use App\Http\Controllers\AbriController;
 use App\Http\Controllers\GuideController;
 use App\Http\Controllers\SommetController;
 use App\Http\Controllers\ValleeController;
+use App\Http\Controllers\AscensionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -92,3 +93,22 @@ Route::post('/abris', [AbriController::class, 'store']);
 Route::get('/abris/{abri}/edit', [AbriController::class, 'edit']);
 Route::put('/abris/{abri}', [AbriController::class, 'update']);
 Route::delete('/abris/{abri}', [AbriController::class, 'delete']);
+
+
+/**
+ * Ascension Routes
+ * 
+ * index - Show all ascensions
+ * (show - Show single ascension)
+ * create - Show form to create new ascension
+ * store - Store new ascension in database
+ * edit - Show form to edit ascension
+ * update - Update ascension in database
+ * destroy - Delete ascension from database
+ */
+Route::get('/ascension', [AscensionController::class, 'index']);
+Route::get('/ascension/create', [AscensionController::class, 'create']);
+Route::post('/ascension', [AscensionController::class, 'store']);
+Route::get('/ascension/{abri}/{sommet}/edit', [AscensionController::class, 'edit']);
+Route::put('/ascension/{abri}/{sommet}', [AscensionController::class, 'update']);
+Route::delete('/ascension/{abri}/{sommet}', [AscensionController::class, 'delete']);

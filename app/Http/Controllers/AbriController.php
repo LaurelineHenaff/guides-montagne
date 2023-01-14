@@ -19,11 +19,11 @@ class AbriController extends Controller
         // $abris = Abri::join('vallees', 'vallees.code_Vallees', 'abris.code_Vallees')
         //     ->get(['abris.*', 'vallees.nom_Vallees']);
 
-        // dd(Abri::all());
-
         return view('abris.index', [
-            // 'abris' => Abri::with('vallee')->get(),
-            'abris' => Abri::all(), // possible grâce à protected $with du model Abri
+            // 'abris' => Abri::with('vallee')->get(), // Syntaxe si on ne defini pas l'attribut $with dans le model
+            'abris' => Abri::all(), /* possible grâce à protected $with du model Abri
+                                       qui s'assure que la relation avec la table
+                                       vallees sera faite dans toutes les requête. */
         ]);
     }
 
@@ -92,6 +92,7 @@ class AbriController extends Controller
             'telGardien_Abris' => 'exclude_if:type_Abris,cabane|required|regex:/^0[1-9][0-9]{8}$/',
         ]);
 
+        // Si l'abris est une cabane il n'y a pas de prixRepas ou telGardien
         if ($fields['type_Abris'] === 'cabane') {
             $fields['prixRepas_Abris'] = null;
             $fields['telGardien_Abris'] = null;
