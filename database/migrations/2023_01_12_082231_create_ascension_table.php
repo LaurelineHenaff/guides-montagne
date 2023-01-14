@@ -14,13 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('ascension', function (Blueprint $table) {
+            $table->primary(['code_Sommets', 'code_Abris']);
             $table->foreignId('code_Sommets')->constrained('sommets', 'code_Sommets');
             $table->foreignId('code_Abris')->constrained('abris', 'code_Abris');
             $table->string('difficulte_Ascension');
             $table->string('duree_Ascension');
-            $table->primary(['code_Sommets', 'code_Abris']);
 
-            $table->timestamps();
+            // $table->timestamps();
         });
     }
 

@@ -9,6 +9,8 @@ class Guide extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'code_Guides';
+
     protected $fillable = [
         'nom_Guides',
         'prenom_Guides',
@@ -16,5 +18,5 @@ class Guide extends Model
         'motdepasse_Guides',
     ];
 
-    protected $primaryKey = 'code_Guides';
+    public $timestamps = false;
 }

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('email_Guides')->nullable();
             $table->string('motdepasse_Guides')->nullable();
 
-            $table->timestamps();
+            // $table->timestamps();
         });
     }
 

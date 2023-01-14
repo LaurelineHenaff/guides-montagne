@@ -15,4 +15,14 @@ class Sommet extends Model
         'nom_Sommets',
         'altitude_Sommets',
     ];
+
+    public $timestamps = false;
+
+    // /**
+    //  * Relation : les ascensions qui atteignent un sommet.
+    //  */
+    // public function ascension()
+    // {
+    //     return $this->hasMany(Ascension::class, 'code_Sommets');
+    // }
 }

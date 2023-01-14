@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nom_Sommets');
             $table->integer('altitude_Sommets');
 
-            $table->timestamps();
+            // $table->timestamps();
         });
     }
 

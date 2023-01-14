@@ -28,7 +28,7 @@ return new class extends Migration
                 ->constrained('vallees', 'code_Vallees')
                 ->onDelete('cascade');
 
-            $table->timestamps();
+            // $table->timestamps();
         });
     }
 

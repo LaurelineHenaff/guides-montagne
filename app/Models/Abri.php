@@ -24,6 +24,8 @@ class Abri extends Model
 
     protected $with = ['vallee'];
 
+    public $timestamps = false;
+
     /**
      * Relation : la vallée ou se trouve l'abri.
      */
@@ -31,4 +33,12 @@ class Abri extends Model
     {
         return $this->belongsTo(Vallee::class, 'code_Vallees');
     }
+
+    // /**
+    //  * Relation : les ascension au départ d'un abris.
+    //  */
+    // public function ascension()
+    // {
+    //     return $this->hasMany(Ascension::class, 'code_Abris');
+    // }
 }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id('code_Vallees');
             $table->string('nom_Vallees');
 
-            $table->timestamps();
+            // $table->timestamps();
         });
     }
 

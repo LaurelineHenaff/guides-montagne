@@ -14,6 +14,8 @@ class Vallee extends Model
 
     protected $fillable = ['nom_Vallees'];
 
+    public $timestamps = false;
+
     /**
      * Relation : les abris de la vallée.
      */
