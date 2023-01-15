@@ -17,8 +17,6 @@ return new class extends Migration
             $table->id('code_Sommets');
             $table->string('nom_Sommets');
             $table->integer('altitude_Sommets');
-
-            // $table->timestamps();
         });
     }
 

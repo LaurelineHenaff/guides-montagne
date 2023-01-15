@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Vallee;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -27,8 +26,6 @@ return new class extends Migration
             $table->foreignId('code_Vallees')
                 ->constrained('vallees', 'code_Vallees')
                 ->onDelete('cascade');
-
-            // $table->timestamps();
         });
     }
 

@@ -19,8 +19,6 @@ return new class extends Migration
             $table->string('prenom_Guides')->nullable();
             $table->string('email_Guides')->nullable();
             $table->string('motdepasse_Guides')->nullable();
-
-            // $table->timestamps();
         });
     }
 

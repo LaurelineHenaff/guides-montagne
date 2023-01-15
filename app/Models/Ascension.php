@@ -9,7 +9,7 @@ class Ascension extends Model
 {
     use HasFactory;
 
-    protected $table = 'ascension';
+    // protected $table = 'ascension';
 
     protected $primaryKey = ['code_Sommets', 'code_Abris'];
     public $incrementing = false;

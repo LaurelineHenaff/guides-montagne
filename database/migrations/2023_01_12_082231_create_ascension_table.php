@@ -15,12 +15,14 @@ return new class extends Migration
     {
         Schema::create('ascension', function (Blueprint $table) {
             $table->primary(['code_Sommets', 'code_Abris']);
-            $table->foreignId('code_Sommets')->constrained('sommets', 'code_Sommets');
-            $table->foreignId('code_Abris')->constrained('abris', 'code_Abris');
             $table->string('difficulte_Ascension');
             $table->string('duree_Ascension');
-
-            // $table->timestamps();
+            $table->foreignId('code_Sommets')
+                ->constrained('sommets', 'code_Sommets')
+                ->onDelete('cascade');
+            $table->foreignId('code_Abris')
+                ->constrained('abris', 'code_Abris')
+                ->onDelete('cascade');
         });
     }
 
