@@ -13,6 +13,9 @@
             <a class="nav-link active" aria-current="page" href="/">Accueil</a>
           </li> --}}
           <li class="nav-item">
+            <a class="nav-link" href="/abris">Abris</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="/guides">Guides</a>
           </li>
           <li class="nav-item">
@@ -22,10 +25,6 @@
             <a class="nav-link" href="/vallees">Vallées</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/abris">Abris</a>
-          </li>
-          <li class="nav-item">
-            {{-- Voir s'il faudra mettre au pluriel (la table est au singulier) --}}
             <a class="nav-link" href="/ascension">Ascensions</a>
           </li>
 
