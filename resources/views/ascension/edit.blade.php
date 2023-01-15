@@ -8,7 +8,7 @@
     <div class="row mb-1">
       <div class="col">
         <label class="form-label" for="code_Abris">Nom Abris</label>
-        <input class="form-control form-control-sm" type="text" readonly value="{{$ascension->nom_Abris}}"> 
+        <input class="form-control form-control-sm" type="text" readonly disabled value="{{$ascension->nom_Abris}}"> 
 
         {{-- <select id="code_Abris" class="form-select form-select-sm" name="code_Abris">
           @foreach ($abris as $a)
@@ -25,7 +25,7 @@
 
       <div class="col">
         <label class="form-label" for="code_Sommets">Nom Sommet</label>
-        <input class="form-control form-control-sm" type="text" readonly value="{{$ascension->nom_Sommets}}"> 
+        <input class="form-control form-control-sm" type="text" readonly disabled value="{{$ascension->nom_Sommets}}"> 
 
         {{-- <select id="code_Sommets" class="form-select form-select-sm" name="code_Sommets">
           @foreach ($sommets as $s)

@@ -10,9 +10,9 @@
       <table class="table table-sm align-middle table-hover">
         <thead>
           <tr>
-            <th>Id Abris</th>
+            {{-- <th>Id Abris</th> --}}
             <th>Nom Abris</th>
-            <th>Id Sommet</th>
+            {{-- <th>Id Sommet</th> --}}
             <th>Nom Sommet</th>
             <th>Difficulté</th>
             <th>Durée</th>
@@ -24,9 +24,9 @@
     
           @foreach ($ascensions as $ascension)
             <tr>
-              <td>{{ $ascension->code_Abris }}</td>
+              {{-- <td>{{ $ascension->code_Abris }}</td> --}}
               <td>{{ $ascension->nom_Abris }}</td>
-              <td>{{ $ascension->code_Sommets }}</td>
+              {{-- <td>{{ $ascension->code_Sommets }}</td> --}}
               <td>{{ $ascension->nom_Sommets }}</td>
               <td>{{ $ascension->difficulte_Ascension }}</td>
               <td>{{ $ascension->duree_Ascension }}</td>
