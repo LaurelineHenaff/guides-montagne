@@ -6,6 +6,7 @@ use App\Http\Controllers\GuideController;
 use App\Http\Controllers\SommetController;
 use App\Http\Controllers\ValleeController;
 use App\Http\Controllers\AscensionController;
+use App\Http\Controllers\RandonneeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -112,3 +113,17 @@ Route::post('/ascension', [AscensionController::class, 'store']);
 Route::get('/ascension/{abri}/{sommet}/edit', [AscensionController::class, 'edit']);
 Route::put('/ascension/{abri}/{sommet}', [AscensionController::class, 'update']);
 Route::delete('/ascension/{abri}/{sommet}', [AscensionController::class, 'delete']);
+
+/**
+ * Randonnees Routes
+ * 
+ * index - Show all randonnees
+ * show - Show single randonnee
+ * (create - Show form to create new randonnee)
+ * (store - Store new randonnee in database)
+ * (edit - Show form to edit randonnee)
+ * (update - Update randonnee in database)
+ * (destroy - Delete randonnee from database)
+ */
+Route::get('/randonnees', [RandonneeController::class, 'index']);
+Route::get('/randonnees/{randonnee}', [RandonneeController::class, 'show']);

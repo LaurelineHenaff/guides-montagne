@@ -19,4 +19,9 @@ class Guide extends Model
     ];
 
     public $timestamps = false;
+
+    public function randonnees()
+    {
+        return $this->hasMany(Randonnee::class, 'code_Guides');
+    }
 }
