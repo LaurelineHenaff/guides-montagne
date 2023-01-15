@@ -23,6 +23,15 @@ class RandonneesTableSeeder extends Seeder
                 'dateFin_Randonnees' => "2019-05-15",
                 'code_Guides' => 1,
             ],
+
+            // Données supplémentaires
+            [
+                'code_Randonnees' => 2,
+                'nbPersonnes_Randonnees' => 5,
+                'dateDebut_Randonnees' => "2019-07-05",
+                'dateFin_Randonnees' => "2019-07-08",
+                'code_Guides' => 2,
+            ],
         ]);
     }
 }
