@@ -26,5 +26,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ValleesTableSeeder::class);
         $this->call(AbrisTableSeeder::class);
         $this->call(AscensionTableSeeder::class);
+        $this->call(RandonneesTableSeeder::class);
     }
 }
