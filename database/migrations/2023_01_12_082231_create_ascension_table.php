@@ -23,6 +23,8 @@ return new class extends Migration
             $table->foreignId('code_Abris')
                 ->constrained('abris', 'code_Abris')
                 ->onDelete('cascade');
+
+            $table->index(['code_Sommets', 'code_Abris']);
         });
     }
 
