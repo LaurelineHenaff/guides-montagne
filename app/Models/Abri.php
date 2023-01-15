@@ -37,7 +37,7 @@ class Abri extends Model
     // /**
     //  * Relation : les ascension au départ d'un abris.
     //  */
-    // public function ascension()
+    // public function ascensions()
     // {
     //     return $this->hasMany(Ascension::class, 'code_Abris');
     // }

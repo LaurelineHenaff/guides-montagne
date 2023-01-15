@@ -14,7 +14,7 @@ class Ascension extends Model
     protected $primaryKey = ['code_Sommets', 'code_Abris'];
     public $incrementing = false;
 
-    // protected $with = ['abris', 'sommets'];
+    // protected $with = ['abri', 'sommet'];
 
     protected $fillable = [
         'code_Sommets',
@@ -25,12 +25,12 @@ class Ascension extends Model
 
     public $timestamps = false;
 
-    // public function abris()
+    // public function abri()
     // {
     //     return $this->belongsTo(Abri::class, 'code_Abris');
     // }
 
-    // public function sommets()
+    // public function sommet()
     // {
     //     return $this->belongsTo(Sommet::class, 'code_Sommets');
     // }

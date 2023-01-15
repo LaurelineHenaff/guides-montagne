@@ -21,7 +21,7 @@ class Sommet extends Model
     // /**
     //  * Relation : les ascensions qui atteignent un sommet.
     //  */
-    // public function ascension()
+    // public function ascensions()
     // {
     //     return $this->hasMany(Ascension::class, 'code_Sommets');
     // }
