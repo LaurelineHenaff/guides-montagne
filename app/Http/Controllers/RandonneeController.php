@@ -19,27 +19,34 @@ class RandonneeController extends Controller
     // Get and show single randonnee
     public function show(Randonnee $randonnee)
     {
-        $concerner = DB::table('randonnees')
-            ->join('concerner', 'randonnees.code_Randonnees', 'concerner.code_Randonnees')
-            ->join('sommets', 'concerner.code_Sommets', 'sommets.code_Sommets')
-            ->join('guides', 'randonnees.code_Guides', 'guides.code_Guides')
-            ->where('randonnees.code_Randonnees', $randonnee->code_Randonnees)
-            ->get([
-                'randonnees.code_Randonnees',
-                'randonnees.dateDebut_Randonnees',
-                'randonnees.dateFin_Randonnees',
-                'randonnees.nbPersonnes_Randonnees',
-                'concerner.date_Concerner',
-                'sommets.nom_Sommets',
-                'guides.prenom_Guides',
-                'guides.nom_Guides'
-            ]);
+        $concerner = DB::select(
+            "SELECT randonnees.code_Randonnees,
+                    randonnees.dateDebut_Randonnees,
+                    randonnees.dateFin_Randonnees,
+                    randonnees.nbPersonnes_Randonnees,
+                    concerner.date_Concerner,
+                    sommets.nom_Sommets,
+                    guides.prenom_Guides,
+                    guides.nom_Guides,
+                    abris.nom_Abris,
+                    reserver.statut_Reserver
+             FROM randonnees, concerner, sommets, guides, reserver, abris
+             WHERE randonnees.code_Randonnees = concerner.code_Randonnees
+             AND concerner.code_Sommets = sommets.code_Sommets
+             AND randonnees.code_Guides = guides.code_Guides
+             AND reserver.code_Abris = abris.code_Abris
+             AND randonnees.code_Randonnees = ?
+             AND concerner.date_Concerner = reserver.date_Reserver
+             ORDER BY concerner.date_Concerner",
+            [$randonnee->code_Randonnees]
+        );
+
         return view('randonnees.show', [
             'concerner' => $concerner,
-            'debut' => $concerner->first()->dateDebut_Randonnees,
-            'fin' => $concerner->first()->dateFin_Randonnees,
-            'nbPersonnes' => $concerner->first()->nbPersonnes_Randonnees,
-            'guide' => $concerner->first()->prenom_Guides . " " . $concerner->first()->nom_Guides,
+            'debut' => $concerner[0]->dateDebut_Randonnees,
+            'fin' => $concerner[0]->dateFin_Randonnees,
+            'nbPersonnes' => $concerner[0]->nbPersonnes_Randonnees,
+            'guide' => $concerner[0]->prenom_Guides . " " . $concerner[0]->nom_Guides,
         ]);
     }
 }

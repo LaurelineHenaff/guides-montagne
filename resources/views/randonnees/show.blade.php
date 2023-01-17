@@ -6,7 +6,7 @@
     <i class="bi bi-arrow-left"></i> Retour
   </a>
 
-  <div class="card mx-auto text-bg-light" style="max-width: 30rem;">
+  <div class="card mx-auto text-bg-light" style="max-width: 35rem;">
     <div class="card-header">
       Randonnée du <strong>{{ $debut }}</strong> au <strong>{{ $fin }}</strong>
     </div>
@@ -25,6 +25,8 @@
           <tr>
             <th>Date</th>
             <th>Sommet</th>
+            <th>Abris</th>
+            <th>Statut</th>
           </tr>
         </thead>
     
@@ -34,6 +36,8 @@
             <tr>
               <td>{{ $c->date_Concerner }}</td>
               <td>{{ $c->nom_Sommets }}</td>
+              <td>{{ $c->nom_Abris }}</td>
+              <td>{{ $c->statut_Reserver }}</td>
             </tr>
           @endforeach
     
