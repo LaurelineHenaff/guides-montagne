@@ -30,7 +30,9 @@ class ValleeController extends Controller
 
         Vallee::create($fields);
 
-        return redirect('/vallees');
+        return redirect('/vallees')
+            ->with('toastTitle', 'Succès')
+            ->with('toastMessage', 'Nouvelle vallée ajouté !');
     }
 
     // Show edit form
@@ -50,7 +52,9 @@ class ValleeController extends Controller
 
         $vallee->update($fields);
 
-        return redirect('/vallees');
+        return redirect('/vallees')
+            ->with('toastTitle', 'Succès')
+            ->with('toastMessage', 'Vallée modifiée !');
     }
 
     // Delete vallee
@@ -58,6 +62,8 @@ class ValleeController extends Controller
     {
         $vallee->delete();
 
-        return redirect('/vallees');
+        return redirect('/vallees')
+            ->with('toastTitle', 'Succès')
+            ->with('toastMessage', 'Vallée supprimée !');
     }
 }
