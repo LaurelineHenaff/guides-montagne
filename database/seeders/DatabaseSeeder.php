@@ -28,5 +28,6 @@ class DatabaseSeeder extends Seeder
         $this->call(AscensionTableSeeder::class);
         $this->call(RandonneesTableSeeder::class);
         $this->call(ConcernerTableSeeder::class);
+        $this->call(ReserverTableSeeder::class);
     }
 }
