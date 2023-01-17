@@ -9,9 +9,6 @@
 
       <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          {{-- <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Accueil</a>
-          </li> --}}
           <li class="nav-item">
             <a class="nav-link" href="/abris">Abris</a>
           </li>
@@ -30,19 +27,17 @@
           <li class="nav-item">
             <a class="nav-link" href="/randonnees">Randonnées</a>
           </li>
-
-          {{-- <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li> --}}
         </ul>
-        {{-- <form role="search">
-          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-        </form> --}}
+
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown me-4">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-fill me-2"></i>Utilisateur</a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-in-right me-2"></i>Se connecter</a></li>
+              <li><a class="dropdown-item" href="#"><i class="bi bi-power me-2"></i>Déconnexion</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
