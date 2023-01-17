@@ -51,7 +51,9 @@ class AbriController extends Controller
 
         Abri::create($fields);
 
-        return redirect('/abris');
+        return redirect('/abris')
+            ->with('toastTitle', 'Succès')
+            ->with('toastMessage', 'Nouvel abri ajouté !');
     }
 
     // Show edit form
@@ -100,7 +102,9 @@ class AbriController extends Controller
 
         $abri->update($fields);
 
-        return redirect('/abris');
+        return redirect('/abris')
+            ->with('toastTitle', 'Succès')
+            ->with('toastMessage', 'Abri modifié !');
     }
 
     // Delete abri
@@ -108,6 +112,8 @@ class AbriController extends Controller
     {
         $abri->delete();
 
-        return redirect('/abris');
+        return redirect('/abris')
+            ->with('toastTitle', 'Succès')
+            ->with('toastMessage', 'Abri supprimé !');
     }
 }
