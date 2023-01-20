@@ -33,8 +33,9 @@
           <li class="nav-item dropdown me-4">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-fill me-2"></i>Utilisateur</a>
             <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-in-right me-2"></i>Se connecter</a></li>
-              <li><a class="dropdown-item" href="#"><i class="bi bi-power me-2"></i>Déconnexion</a></li>
+              <li><a class="dropdown-item text-danger" href="/enregistrer"><i class="bi bi-person-plus-fill me-2"></i></i>S'enregistrer</a></li>
+              <li><a class="dropdown-item" href="/connecter"><i class="bi bi-box-arrow-in-right me-2"></i>Se connecter</a></li>
+              <li><a class="dropdown-item" href="/deconnecter"><i class="bi bi-power me-2"></i>Déconnexion</a></li>
             </ul>
           </li>
         </ul>
