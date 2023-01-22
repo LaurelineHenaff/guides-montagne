@@ -49,3 +49,5 @@ php artisan migrate:fresh --seed
 Créer le `VirtualHost` qui pointe vers le dossier `/public` du projet.
 
 Fin.
+
+(Compte administrateur par défaut : `admin` // `admin`).
