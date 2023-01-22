@@ -108,7 +108,7 @@ class AbriController extends Controller
     }
 
     // Delete abri
-    public function delete(Abri $abri)
+    public function destroy(Abri $abri)
     {
         $abri->delete();
 

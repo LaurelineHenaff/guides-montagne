@@ -56,7 +56,7 @@ class SommetController extends Controller
     }
 
     // Delete sommet
-    public function delete(Sommet $sommet)
+    public function destroy(Sommet $sommet)
     {
         $sommet->delete();
 

@@ -48,7 +48,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/guides', [GuideController::class, 'store']);
     Route::get('/guides/{guide}/edit', [GuideController::class, 'edit']);
     Route::put('/guides/{guide}', [GuideController::class, 'update']);
-    Route::delete('/guides/{guide}', [GuideController::class, 'delete']);
+    Route::delete('/guides/{guide}', [GuideController::class, 'destroy']);
 });
 
 /**
@@ -68,7 +68,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/sommets', [SommetController::class, 'store']);
     Route::get('/sommets/{sommet}/edit', [SommetController::class, 'edit']);
     Route::put('/sommets/{sommet}', [SommetController::class, 'update']);
-    Route::delete('/sommets/{sommet}', [SommetController::class, 'delete']);
+    Route::delete('/sommets/{sommet}', [SommetController::class, 'destroy']);
 });
 /**
  * Vallees Routes
@@ -87,7 +87,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/vallees', [ValleeController::class, 'store']);
     Route::get('/vallees/{vallee}/edit', [ValleeController::class, 'edit']);
     Route::put('/vallees/{vallee}', [ValleeController::class, 'update']);
-    Route::delete('/vallees/{vallee}', [ValleeController::class, 'delete']);
+    Route::delete('/vallees/{vallee}', [ValleeController::class, 'destroy']);
 });
 
 /**
@@ -107,7 +107,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/abris', [AbriController::class, 'store']);
     Route::get('/abris/{abri}/edit', [AbriController::class, 'edit']);
     Route::put('/abris/{abri}', [AbriController::class, 'update']);
-    Route::delete('/abris/{abri}', [AbriController::class, 'delete']);
+    Route::delete('/abris/{abri}', [AbriController::class, 'destroy']);
 });
 
 /**
@@ -127,7 +127,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/ascension', [AscensionController::class, 'store']);
     Route::get('/ascension/{abri}/{sommet}/edit', [AscensionController::class, 'edit']);
     Route::put('/ascension/{abri}/{sommet}', [AscensionController::class, 'update']);
-    Route::delete('/ascension/{abri}/{sommet}', [AscensionController::class, 'delete']);
+    Route::delete('/ascension/{abri}/{sommet}', [AscensionController::class, 'destroy']);
 });
 
 /**

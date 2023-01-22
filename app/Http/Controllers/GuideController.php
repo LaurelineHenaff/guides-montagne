@@ -60,8 +60,11 @@ class GuideController extends Controller
     }
 
     // Delete guide
-    public function delete(Guide $guide)
+    public function destroy(Guide $guide)
     {
+        // A voir : Effacer un guide effacera en cascade ses randonnées
+        // mais pour le moment les reservations ne seront pas supprimer
+
         $guide->delete();
 
         return redirect('/guides');

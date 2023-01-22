@@ -58,7 +58,7 @@ class ValleeController extends Controller
     }
 
     // Delete vallee
-    public function delete(Vallee $vallee)
+    public function destroy(Vallee $vallee)
     {
         $vallee->delete();
 

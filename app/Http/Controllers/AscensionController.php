@@ -97,7 +97,7 @@ class AscensionController extends Controller
     }
 
     // Delete ascension
-    public function delete(Abri $abri, Sommet $sommet)
+    public function destroy(Abri $abri, Sommet $sommet)
     {
         DB::table('ascension')
             ->where('ascension.code_Abris', $abri->code_Abris)
