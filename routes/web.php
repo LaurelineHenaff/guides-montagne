@@ -7,6 +7,7 @@ use App\Http\Controllers\SommetController;
 use App\Http\Controllers\ValleeController;
 use App\Http\Controllers\AscensionController;
 use App\Http\Controllers\RandonneeController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,13 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/enregistrer', [UserController::class, 'create'])->middleware('auth');
+Route::post('/users', [UserController::class, 'store'])->middleware('auth');
+Route::get('/connecter', [UserController::class, 'login'])->name('login');
+Route::post('/deconnecter', [UserController::class, 'logout'])->middleware('auth');
+Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+
 /**
  * Guides Routes
  * 
@@ -34,12 +42,14 @@ Route::get('/', function () {
  * update - Update guide in database
  * destroy - Delete guide from database
  */
-Route::get('/guides', [GuideController::class, 'index']);
-Route::get('/guides/create', [GuideController::class, 'create']);
-Route::post('/guides', [GuideController::class, 'store']);
-Route::get('/guides/{guide}/edit', [GuideController::class, 'edit']);
-Route::put('/guides/{guide}', [GuideController::class, 'update']);
-Route::delete('/guides/{guide}', [GuideController::class, 'delete']);
+Route::middleware(['auth'])->group(function () {
+    Route::get('/guides', [GuideController::class, 'index']);
+    Route::get('/guides/create', [GuideController::class, 'create']);
+    Route::post('/guides', [GuideController::class, 'store']);
+    Route::get('/guides/{guide}/edit', [GuideController::class, 'edit']);
+    Route::put('/guides/{guide}', [GuideController::class, 'update']);
+    Route::delete('/guides/{guide}', [GuideController::class, 'delete']);
+});
 
 /**
  * Sommets Routes
@@ -52,13 +62,14 @@ Route::delete('/guides/{guide}', [GuideController::class, 'delete']);
  * update - Update sommet in database
  * destroy - Delete sommet from database
  */
-Route::get('/sommets', [SommetController::class, 'index']);
-Route::get('/sommets/create', [SommetController::class, 'create']);
-Route::post('/sommets', [SommetController::class, 'store']);
-Route::get('/sommets/{sommet}/edit', [SommetController::class, 'edit']);
-Route::put('/sommets/{sommet}', [SommetController::class, 'update']);
-Route::delete('/sommets/{sommet}', [SommetController::class, 'delete']);
-
+Route::middleware(['auth'])->group(function () {
+    Route::get('/sommets', [SommetController::class, 'index']);
+    Route::get('/sommets/create', [SommetController::class, 'create']);
+    Route::post('/sommets', [SommetController::class, 'store']);
+    Route::get('/sommets/{sommet}/edit', [SommetController::class, 'edit']);
+    Route::put('/sommets/{sommet}', [SommetController::class, 'update']);
+    Route::delete('/sommets/{sommet}', [SommetController::class, 'delete']);
+});
 /**
  * Vallees Routes
  * 
@@ -70,12 +81,14 @@ Route::delete('/sommets/{sommet}', [SommetController::class, 'delete']);
  * update - Update vallee in database
  * destroy - Delete vallee from database
  */
-Route::get('/vallees', [ValleeController::class, 'index']);
-Route::get('/vallees/create', [ValleeController::class, 'create']);
-Route::post('/vallees', [ValleeController::class, 'store']);
-Route::get('/vallees/{vallee}/edit', [ValleeController::class, 'edit']);
-Route::put('/vallees/{vallee}', [ValleeController::class, 'update']);
-Route::delete('/vallees/{vallee}', [ValleeController::class, 'delete']);
+Route::middleware(['auth'])->group(function () {
+    Route::get('/vallees', [ValleeController::class, 'index']);
+    Route::get('/vallees/create', [ValleeController::class, 'create']);
+    Route::post('/vallees', [ValleeController::class, 'store']);
+    Route::get('/vallees/{vallee}/edit', [ValleeController::class, 'edit']);
+    Route::put('/vallees/{vallee}', [ValleeController::class, 'update']);
+    Route::delete('/vallees/{vallee}', [ValleeController::class, 'delete']);
+});
 
 /**
  * Abris Routes
@@ -88,13 +101,14 @@ Route::delete('/vallees/{vallee}', [ValleeController::class, 'delete']);
  * update - Update abri in database
  * destroy - Delete abri from database
  */
-Route::get('/abris', [AbriController::class, 'index']);
-Route::get('/abris/create', [AbriController::class, 'create']);
-Route::post('/abris', [AbriController::class, 'store']);
-Route::get('/abris/{abri}/edit', [AbriController::class, 'edit']);
-Route::put('/abris/{abri}', [AbriController::class, 'update']);
-Route::delete('/abris/{abri}', [AbriController::class, 'delete']);
-
+Route::middleware(['auth'])->group(function () {
+    Route::get('/abris', [AbriController::class, 'index']);
+    Route::get('/abris/create', [AbriController::class, 'create']);
+    Route::post('/abris', [AbriController::class, 'store']);
+    Route::get('/abris/{abri}/edit', [AbriController::class, 'edit']);
+    Route::put('/abris/{abri}', [AbriController::class, 'update']);
+    Route::delete('/abris/{abri}', [AbriController::class, 'delete']);
+});
 
 /**
  * Ascension Routes
@@ -107,12 +121,14 @@ Route::delete('/abris/{abri}', [AbriController::class, 'delete']);
  * update - Update ascension in database
  * destroy - Delete ascension from database
  */
-Route::get('/ascension', [AscensionController::class, 'index']);
-Route::get('/ascension/create', [AscensionController::class, 'create']);
-Route::post('/ascension', [AscensionController::class, 'store']);
-Route::get('/ascension/{abri}/{sommet}/edit', [AscensionController::class, 'edit']);
-Route::put('/ascension/{abri}/{sommet}', [AscensionController::class, 'update']);
-Route::delete('/ascension/{abri}/{sommet}', [AscensionController::class, 'delete']);
+Route::middleware(['auth'])->group(function () {
+    Route::get('/ascension', [AscensionController::class, 'index']);
+    Route::get('/ascension/create', [AscensionController::class, 'create']);
+    Route::post('/ascension', [AscensionController::class, 'store']);
+    Route::get('/ascension/{abri}/{sommet}/edit', [AscensionController::class, 'edit']);
+    Route::put('/ascension/{abri}/{sommet}', [AscensionController::class, 'update']);
+    Route::delete('/ascension/{abri}/{sommet}', [AscensionController::class, 'delete']);
+});
 
 /**
  * Randonnees Routes
@@ -125,5 +141,7 @@ Route::delete('/ascension/{abri}/{sommet}', [AscensionController::class, 'delete
  * (update - Update randonnee in database)
  * (destroy - Delete randonnee from database)
  */
-Route::get('/randonnees', [RandonneeController::class, 'index']);
-Route::get('/randonnees/{randonnee}', [RandonneeController::class, 'show']);
+Route::middleware(['auth'])->group(function () {
+    Route::get('/randonnees', [RandonneeController::class, 'index']);
+    Route::get('/randonnees/{randonnee}', [RandonneeController::class, 'show']);
+});
