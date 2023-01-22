@@ -19,7 +19,8 @@ return new class extends Migration
             $table->date('dateDebut_Randonnees');
             $table->date('dateFin_Randonnees');
             $table->foreignId('code_Guides')
-                ->constrained('guides', 'code_Guides');
+                ->constrained('guides', 'code_Guides')
+                ->onDelete('cascade');
         });
     }
 
