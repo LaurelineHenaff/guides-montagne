@@ -16,7 +16,7 @@
     
     @include('partials._navbar')
     
-    <main class="container">
+    <main class="container pb-5">
         {{ $slot }}
     </main>
     
