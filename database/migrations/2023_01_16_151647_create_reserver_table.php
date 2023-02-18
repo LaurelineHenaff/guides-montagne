@@ -15,8 +15,12 @@ return new class extends Migration
     {
         Schema::create('reserver', function (Blueprint $table) {
             $table->primary(['code_Abris', 'code_Randonnees']);
-            $table->foreignId('code_Abris');
-            $table->foreignId('code_Randonnees');
+            $table->foreignId('code_Abris')
+                ->constrained('abris', 'code_Abris')
+                ->onDelete('cascade');
+            $table->foreignId('code_Randonnees')
+                ->constrained('randonnees', 'code_Randonnees')
+                ->onDelete('cascade');
             $table->date('date_Reserver');
             $table->string('statut_Reserver');
 

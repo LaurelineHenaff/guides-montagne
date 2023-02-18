@@ -70,6 +70,7 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/sommets/{sommet}', [SommetController::class, 'update']);
     Route::delete('/sommets/{sommet}', [SommetController::class, 'destroy']);
 });
+
 /**
  * Vallees Routes
  * 
@@ -79,6 +80,7 @@ Route::middleware(['auth'])->group(function () {
  * store - Store new vallee in database
  * edit - Show form to edit vallee
  * update - Update vallee in database
+ * delete - Show confirmation form to delete vallee
  * destroy - Delete vallee from database
  */
 Route::middleware(['auth'])->group(function () {
@@ -87,6 +89,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/vallees', [ValleeController::class, 'store']);
     Route::get('/vallees/{vallee}/edit', [ValleeController::class, 'edit']);
     Route::put('/vallees/{vallee}', [ValleeController::class, 'update']);
+    Route::get('/vallees/{vallee}/delete', [ValleeController::class, 'delete']);
     Route::delete('/vallees/{vallee}', [ValleeController::class, 'destroy']);
 });
 

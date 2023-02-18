@@ -1,6 +1,6 @@
 <x-layout>
 
-    <h1 class="mb-4">Liste des Vallées</h1>
+    <h1 class="mb-4">Liste des Vallées <span class="small text-secondary fw-normal">[{{count($vallees)}}]</span></h1>
     
     <a class="btn btn-success btn-sm mb-3" href="/vallees/create">
       <i class="bi bi-plus-lg"></i> Ajouter
@@ -24,12 +24,14 @@
               <td>{{ $vallee->nom_Vallees }}</td>
               <td class="d-flex gap-1">
                 <a class="btn btn-primary btn-sm" href="/vallees/{{ $vallee->code_Vallees }}/edit"><i class="bi bi-pencil"></i></a>
-                <form action="/vallees/{{ $vallee->code_Vallees }}" method="POST">
+                <a class="btn btn-danger btn-sm" href="/vallees/{{ $vallee->code_Vallees }}/delete"><i class="bi bi-trash"></i></a>
+                {{-- Bouton d'action de suppression sans confirmation --}}
+                {{-- <form action="/vallees/{{ $vallee->code_Vallees }}" method="POST">
                   @csrf
                   @method('DELETE')
                   
                   <button class="btn btn-danger btn-sm" type="submit"><i class="bi bi-trash"></i></button>
-                </form>
+                </form> --}}
               </td>
             </tr>
           @endforeach
