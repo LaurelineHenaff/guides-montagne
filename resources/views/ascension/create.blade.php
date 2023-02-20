@@ -53,7 +53,7 @@
       </div>
 
       <div class="col">
-        <label class="form-label mt-2" for="duree_Ascension">Durée (minutes)<sup>&nbsp;*</sup></label>
+        <label class="form-label mt-2" for="duree_Ascension">Durée (heures)<sup>&nbsp;*</sup></label>
         <input id="duree_Ascension" class="form-control form-control-sm" type="number" name="duree_Ascension" value="{{ old('duree_Ascension') }}">
         @error('duree_Ascension')
           <p class="text-danger small mt-1 mb-0">{{ $message }}</p>
