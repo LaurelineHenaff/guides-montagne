@@ -73,6 +73,26 @@ class Abri extends Model
     }
 
     /**
+     * Requête : supprimer un abri donné avec toutes ses randonnées associées
+     * (les ascensions, réservations, et concerner sont supprimés par CASCADE)
+     */
+    public static function deleteOne(Abri $abri)
+    {
+        DB::delete(
+            "DELETE
+             FROM randonnees
+             WHERE randonnees.code_Randonnees IN (
+                 SELECT reserver.code_Randonnees
+                 FROM reserver, abris
+                 WHERE reserver.code_Abris = abris.code_Abris
+                 AND abris.code_Abris = ?);",
+            [$abri->code_Abris]
+        );
+
+        $abri->delete();
+    }
+
+    /**
      * Relation : la vallée ou se trouve l'abri.
      */
     public function vallee()
