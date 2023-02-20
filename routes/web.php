@@ -22,7 +22,7 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('home');
-});
+})->middleware('auth');
 
 Route::get('/enregistrer', [UserController::class, 'create'])->middleware('auth');
 Route::post('/users', [UserController::class, 'store'])->middleware('auth');
@@ -42,7 +42,7 @@ Route::post('/users/authenticate', [UserController::class, 'authenticate']);
  * update - Update guide in database
  * destroy - Delete guide from database
  */
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->name('guides')->group(function () {
     Route::get('/guides', [GuideController::class, 'index']);
     Route::get('/guides/create', [GuideController::class, 'create']);
     Route::post('/guides', [GuideController::class, 'store']);
@@ -63,7 +63,7 @@ Route::middleware(['auth'])->group(function () {
  * delete - Show confirmation form to delete sommet
  * destroy - Delete sommet from database
  */
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->name('sommets')->group(function () {
     Route::get('/sommets', [SommetController::class, 'index']);
     Route::get('/sommets/create', [SommetController::class, 'create']);
     Route::post('/sommets', [SommetController::class, 'store']);
@@ -85,7 +85,7 @@ Route::middleware(['auth'])->group(function () {
  * delete - Show confirmation form to delete vallee
  * destroy - Delete vallee from database
  */
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->name('vallees')->group(function () {
     Route::get('/vallees', [ValleeController::class, 'index']);
     Route::get('/vallees/create', [ValleeController::class, 'create']);
     Route::post('/vallees', [ValleeController::class, 'store']);
@@ -107,7 +107,7 @@ Route::middleware(['auth'])->group(function () {
  * delete - Show confirmation form to delete abri
  * destroy - Delete abri from database
  */
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->name('abris')->group(function () {
     Route::get('/abris', [AbriController::class, 'index']);
     Route::get('/abris/create', [AbriController::class, 'create']);
     Route::post('/abris', [AbriController::class, 'store']);
@@ -128,7 +128,7 @@ Route::middleware(['auth'])->group(function () {
  * update - Update ascension in database
  * destroy - Delete ascension from database
  */
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->name('ascension')->group(function () {
     Route::get('/ascension', [AscensionController::class, 'index']);
     Route::get('/ascension/create', [AscensionController::class, 'create']);
     Route::post('/ascension', [AscensionController::class, 'store']);
@@ -149,7 +149,7 @@ Route::middleware(['auth'])->group(function () {
  * (delete - Show confirmation form to delete randonnee)
  * (destroy - Delete randonnee from database)
  */
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->name('randonnees')->group(function () {
     Route::get('/randonnees', [RandonneeController::class, 'index']);
     Route::get('/randonnees/{randonnee}', [RandonneeController::class, 'show']);
 });
