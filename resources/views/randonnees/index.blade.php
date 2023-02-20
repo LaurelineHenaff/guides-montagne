@@ -1,6 +1,6 @@
 <x-layout>
 
-    <h1 class="mb-4">Liste des Randonnées</h1>
+    <h1 class="mb-4">Liste des Randonnées <span class="small text-secondary fw-normal">[{{count($randonnees)}}]</span></h1>
     
     @if (count($randonnees) > 0)
       <table class="table table-sm align-middle table-hover">
