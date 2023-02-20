@@ -1,12 +1,13 @@
 <x-layout>
 
+  {{-- TODO: Le formulaire ne devrait pas s'afficher s'il n'y a pas d'abri ou de sommet --}}
   <form action="/ascension" method="POST" class="mb-4 bg-light p-4 rounded-2 border mx-auto" style="max-width: 25rem;">
     <h1 class="mb-4 fs-3">Ajouter une Ascension</h1>
     @csrf
 
     <div class="row mb-1">
       <div class="col">
-        <label class="form-label" for="code_Abris">Nom Abris<sup>&nbsp;*</sup></label>  
+        <label class="form-label z-1" for="code_Abris">Nom Abris<sup>&nbsp;*</sup></label>  
         <select id="code_Abris" class="form-select form-select-sm" name="code_Abris">
           @foreach ($abris as $abri)
             @php
