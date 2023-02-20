@@ -1,6 +1,6 @@
 <x-layout>
 
-    <h1 class="mb-4">Liste des Abris</h1>
+    <h1 class="mb-4">Liste des Abris <span class="small text-secondary fw-normal">[{{count($abris)}}]</span></h1>
     
     <a class="btn btn-success btn-sm mb-3" href="/abris/create">
       <i class="bi bi-plus-lg"></i> Ajouter
