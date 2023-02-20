@@ -186,6 +186,19 @@ return [
 
         // Nom des champs pour les formulaires des vallées.
         'nom_Vallees' => "'Nom'",
+
+        // Nom des champs pour les formulaires des ascensions.
+        'duree_Ascension' => "'Durée'",
+
+        // Nom des champs pour les formulaires des abris.
+        'nom_Abris' => "'Nom'",
+        'type_Abris' => "'Type'",
+        'nom_Abris' => "'Nom'",
+        'altitude_Abris' => "'Altitude'",
+        'places_Abris' => "'Places'",
+        'prixNuit_Abris' => "'Prix Nuit'",
+        'prixRepas_Abris' => "'Prix Repas'",
+        'telGardien_Abris' => "'Téléphone Gardien'",
     ],
 
 ];
