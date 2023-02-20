@@ -71,7 +71,7 @@
       </div>
     </div>
 
-    <div class="row mt-2">
+    <div id="info-type_Abris" class="row mt-2">
       <div class="col">
         {{-- Prix des repas dans le refuge --}}
         <label class="form-label" for="prixRepas_Abris">Prix Repas (€)<sup>&nbsp;-</sup></label>
@@ -95,5 +95,6 @@
     <button class="btn btn-primary btn-sm mt-3" type="submit">Modifier</button>
     <a class="btn btn-secondary btn-sm mt-3" href="/abris">Retour</a>
   </form>
+  @include('partials._abris-js')
 
 </x-layout>
