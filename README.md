@@ -25,7 +25,7 @@ cd guidesmontagne
 Installer les dépendances :
 
 ```
-composer install
+composer update
 ```
 
 Créer la base de donnée vide (par exemple `guidesmontagne`).
