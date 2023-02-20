@@ -102,6 +102,7 @@ Route::middleware(['auth'])->group(function () {
  * store - Store new abri in database
  * edit - Show form to edit abri
  * update - Update abri in database
+ * delete - Show confirmation form to delete abri
  * destroy - Delete abri from database
  */
 Route::middleware(['auth'])->group(function () {
@@ -110,6 +111,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/abris', [AbriController::class, 'store']);
     Route::get('/abris/{abri}/edit', [AbriController::class, 'edit']);
     Route::put('/abris/{abri}', [AbriController::class, 'update']);
+    Route::get('/abris/{abri}/delete', [AbriController::class, 'delete']);
     Route::delete('/abris/{abri}', [AbriController::class, 'destroy']);
 });
 

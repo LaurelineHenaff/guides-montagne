@@ -107,9 +107,30 @@ class AbriController extends Controller
             ->with('toastMessage', 'Abri modifié !');
     }
 
-    // Delete abri
+    // Show delete confirmation
+    public function delete(Abri $abri)
+    {
+        return view('abris.delete', [
+            'abri' => $abri,
+            'ascensions' => Abri::ascensions($abri),
+            'randonnees' => Abri::randonnees($abri),
+        ]);
+    }
+
+    // Destroy abri
     public function destroy(Abri $abri)
     {
+        DB::delete(
+            "DELETE
+             FROM randonnees
+             WHERE randonnees.code_Randonnees IN (
+                 SELECT reserver.code_Randonnees
+                 FROM reserver, abris
+                 WHERE reserver.code_Abris = abris.code_Abris
+                 AND abris.code_Abris = ?);",
+            [$abri->code_Abris]
+        );
+
         $abri->delete();
 
         return redirect('/abris')
