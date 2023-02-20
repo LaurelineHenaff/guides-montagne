@@ -55,10 +55,20 @@ class SommetController extends Controller
         return redirect('/sommets');
     }
 
+    // Show delete confirmation
+    public function delete(Sommet $sommet)
+    {
+        return view('sommets.delete', [
+            'sommet' => $sommet,
+            'ascensions' => Sommet::ascensions($sommet),
+            'randonnees' => Sommet::randonnees($sommet),
+        ]);
+    }
+
     // Delete sommet
     public function destroy(Sommet $sommet)
     {
-        $sommet->delete();
+        Sommet::deleteOne($sommet);
 
         return redirect('/sommets');
     }

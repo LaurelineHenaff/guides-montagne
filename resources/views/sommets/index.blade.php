@@ -1,6 +1,6 @@
 <x-layout>
 
-    <h1 class="mb-4">Liste des Sommets</h1>
+    <h1 class="mb-4">Liste des Sommets <span class="small text-secondary fw-normal">[{{count($sommets)}}]</span></h1>
     
     <a class="btn btn-success btn-sm mb-3" href="/sommets/create">
       <i class="bi bi-plus-lg"></i> Ajouter
@@ -26,12 +26,14 @@
               <td>{{ $sommet->altitude_Sommets }}</td>
               <td class="d-flex gap-1">
                 <a class="btn btn-primary btn-sm" href="/sommets/{{ $sommet->code_Sommets }}/edit"><i class="bi bi-pencil"></i></a>
-                <form action="/sommets/{{ $sommet->code_Sommets }}" method="POST">
+                <a class="btn btn-danger btn-sm" href="/sommets/{{ $sommet->code_Sommets }}/delete"><i class="bi bi-trash"></i></a>
+                {{-- Bouton d'action de suppression sans confirmation --}}
+                {{-- <form action="/sommets/{{ $sommet->code_Sommets }}" method="POST">
                   @csrf
                   @method('DELETE')
                   
                   <button class="btn btn-danger btn-sm" type="submit"><i class="bi bi-trash"></i></button>
-                </form>
+                </form> --}}
               </td>
             </tr>
           @endforeach

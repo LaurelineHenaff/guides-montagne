@@ -60,6 +60,7 @@ Route::middleware(['auth'])->group(function () {
  * store - Store new sommet in database
  * edit - Show form to edit sommet
  * update - Update sommet in database
+ * delete - Show confirmation form to delete sommet
  * destroy - Delete sommet from database
  */
 Route::middleware(['auth'])->group(function () {
@@ -68,6 +69,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/sommets', [SommetController::class, 'store']);
     Route::get('/sommets/{sommet}/edit', [SommetController::class, 'edit']);
     Route::put('/sommets/{sommet}', [SommetController::class, 'update']);
+    Route::get('/sommets/{sommet}/delete', [SommetController::class, 'delete']);
     Route::delete('/sommets/{sommet}', [SommetController::class, 'destroy']);
 });
 
@@ -144,6 +146,7 @@ Route::middleware(['auth'])->group(function () {
  * (store - Store new randonnee in database)
  * (edit - Show form to edit randonnee)
  * (update - Update randonnee in database)
+ * (delete - Show confirmation form to delete randonnee)
  * (destroy - Delete randonnee from database)
  */
 Route::middleware(['auth'])->group(function () {
