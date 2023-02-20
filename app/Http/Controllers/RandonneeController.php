@@ -41,12 +41,17 @@ class RandonneeController extends Controller
             [$randonnee->code_Randonnees]
         );
 
-        return view('randonnees.show', [
+        $data = [
             'concerner' => $concerner,
-            'debut' => $concerner[0]->dateDebut_Randonnees,
-            'fin' => $concerner[0]->dateFin_Randonnees,
-            'nbPersonnes' => $concerner[0]->nbPersonnes_Randonnees,
-            'guide' => $concerner[0]->prenom_Guides . " " . $concerner[0]->nom_Guides,
-        ]);
+        ];
+
+        if (is_array($concerner) && count($concerner) > 0) {
+            $data['debut'] = $concerner[0]->dateDebut_Randonnees;
+            $data['fin'] = $concerner[0]->dateFin_Randonnees;
+            $data['nbPersonnes'] = $concerner[0]->nbPersonnes_Randonnees;
+            $data['guide'] = $concerner[0]->prenom_Guides . " " . $concerner[0]->nom_Guides;
+        }
+
+        return view('randonnees.show', $data);
     }
 }
