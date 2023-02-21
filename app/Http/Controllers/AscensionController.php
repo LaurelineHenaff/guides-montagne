@@ -96,13 +96,20 @@ class AscensionController extends Controller
         return redirect('/ascension');
     }
 
+    // Show delete confirmation form
+    public function delete(Abri $abri, Sommet $sommet)
+    {
+        return view('ascension.delete', [
+            'abri' => $abri,
+            'sommet' => $sommet,
+            'randonnees' => Ascension::randonnees($abri, $sommet),
+        ]);
+    }
+
     // Delete ascension
     public function destroy(Abri $abri, Sommet $sommet)
     {
-        DB::table('ascension')
-            ->where('ascension.code_Abris', $abri->code_Abris)
-            ->where('ascension.code_Sommets', $sommet->code_Sommets)
-            ->delete();
+        Ascension::deleteOne($abri, $sommet);
 
         return redirect('/ascension');
     }

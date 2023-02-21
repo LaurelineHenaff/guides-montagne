@@ -126,6 +126,7 @@ Route::middleware(['auth'])->name('abris')->group(function () {
  * store - Store new ascension in database
  * edit - Show form to edit ascension
  * update - Update ascension in database
+ * delete - Show confirmation form to delete ascension
  * destroy - Delete ascension from database
  */
 Route::middleware(['auth'])->name('ascension')->group(function () {
@@ -134,6 +135,7 @@ Route::middleware(['auth'])->name('ascension')->group(function () {
     Route::post('/ascension', [AscensionController::class, 'store']);
     Route::get('/ascension/{abri}/{sommet}/edit', [AscensionController::class, 'edit']);
     Route::put('/ascension/{abri}/{sommet}', [AscensionController::class, 'update']);
+    Route::get('/ascension/{abri}/{sommet}/delete', [AscensionController::class, 'delete']);
     Route::delete('/ascension/{abri}/{sommet}', [AscensionController::class, 'destroy']);
 });
 

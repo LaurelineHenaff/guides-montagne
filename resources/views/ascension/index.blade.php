@@ -32,12 +32,14 @@
               <td>{{ $ascension->duree_Ascension }}</td>
               <td class="d-flex gap-1">
                 <a class="btn btn-primary btn-sm" href="/ascension/{{ $ascension->code_Abris }}/{{ $ascension->code_Sommets }}/edit"><i class="bi bi-pencil"></i></a>
-                <form action="/ascension/{{ $ascension->code_Abris }}/{{ $ascension->code_Sommets }}" method="POST">
+                <a class="btn btn-danger btn-sm" href="/ascension/{{ $ascension->code_Abris }}/{{ $ascension->code_Sommets }}/delete"><i class="bi bi-trash"></i></a>
+                {{-- Bouton d'action de suppression sans confirmation --}}
+                {{-- <form action="/ascension/{{ $ascension->code_Abris }}/{{ $ascension->code_Sommets }}" method="POST">
                   @csrf
                   @method('DELETE')
                   
                   <button class="btn btn-danger btn-sm" type="submit"><i class="bi bi-trash"></i></button>
-                </form>
+                </form> --}}
               </td>
             </tr>
           @endforeach
