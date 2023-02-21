@@ -4,14 +4,14 @@
         <h1 class="mb-4 fs-3">Se connecter</h1>
         @csrf
     
-        <label class="form-label" for="name">Nom<sup>&nbsp;*</sup></label>
-        <input id="name" class="form-control form-control-sm mb-1" type="text" name="name" value="{{ old('name') }}">
+        <label class="form-label" for="name">Utilisateur<sup>&nbsp;*</sup></label>
+        <input id="name" class="form-control form-control-sm mb-1" type="text" name="name" value="{{ old('name') ?? 'admin' }}">
         @error('name')
           <p class="text-danger small mt-1 mb-0">{{ $message }}</p>
         @enderror
        
         <label class="form-label mt-2" for="password">Mot de passe<sup>&nbsp;*</sup></label>
-        <input id="password" class="form-control form-control-sm" type="password" name="password">
+        <input id="password" class="form-control form-control-sm" type="password" name="password" value="admin">
         @error('password')
           <p class="text-danger small mt-1 mb-0">{{ $message }}</p>
         @enderror

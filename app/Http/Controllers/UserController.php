@@ -55,7 +55,7 @@ class UserController extends Controller
         }
 
         return back()
-            ->withErrors(['name' => 'Nom ou mot de passe non valide.'])
+            ->withErrors(['name' => 'Utilisateur ou mot de passe incorrect.'])
             ->onlyInput('name');
     }
 

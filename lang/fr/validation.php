@@ -175,6 +175,9 @@ return [
     */
 
     'attributes' => [
+        // Nom des champs pour le formulaire de connexion.
+        'name' => "'Utilisateur'",
+        'password' => "'Mot de passe'",
         // Nom des champs pour les formulaires des guides.
         'nom_Guides' => "'Nom'",
         'email_Guides' => "'E-mail'",
