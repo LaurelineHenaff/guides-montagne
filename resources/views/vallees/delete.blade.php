@@ -12,8 +12,8 @@
     $numRandonnees = count($randonnees) ?? 0;
   @endphp
 
+  {{-- Affichage des abris --}}
   @if ($numAbris > 0)
-    {{-- Affichage des abris --}}
     <div class="alert alert-info">
       <i class="bi bi-info-circle-fill me-3"></i>Cela entrainera la suppression de <strong>{{$numAbris}}</strong> abri{{$numAbris > 1 ? 's' : ''}} présent{{$numAbris > 1 ? 's' : ''}} dans cette vallée :
     </div>
@@ -37,8 +37,8 @@
     </table> 
   @endif
   
+  {{-- Affichage des ascensions --}}
   @if ($numAscensions > 0)
-    {{-- Affichage des ascensions --}}
     <div class="alert alert-info">
       <i class="bi bi-info-circle-fill me-3"></i>Cela entrainera aussi la suppression de <strong>{{$numAscensions}}</strong> ascension{{$numAscensions > 1 ? 's' : ''}} associée{{$numAscensions > 1 ? 's' : ''}} :
     </div>
@@ -58,8 +58,8 @@
     </table> 
   @endif
 
+  {{-- Affichage des randonnées --}}
   @if ($numRandonnees > 0)
-    {{-- Affichage des randonnées --}}
     <div class="alert alert-info">
       <i class="bi bi-info-circle-fill me-3"></i>Cela entrainera la suppression de <strong>{{$numRandonnees}}</strong> randonnée{{$numRandonnees > 1 ? 's' : ''}} associée{{$numRandonnees > 1 ? 's' : ''}} à cette vallée ainsi que ses réservations :
     </div>
