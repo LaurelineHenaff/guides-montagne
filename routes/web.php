@@ -22,7 +22,7 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('home');
-}); //->middleware('auth');
+});
 
 Route::get('/enregistrer', [UserController::class, 'create'])->middleware('auth');
 Route::post('/users', [UserController::class, 'store'])->middleware('auth');
