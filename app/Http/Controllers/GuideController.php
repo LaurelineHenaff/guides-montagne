@@ -59,12 +59,19 @@ class GuideController extends Controller
         return redirect('/guides');
     }
 
-    // Delete guide
+    // Show show delete confirmation form
+    public function delete(Guide $guide)
+    {
+        return view('guides.delete', [
+            'guide' => $guide,
+            'randonnees' => Guide::randonnees($guide),
+        ]);
+    }
+
+    // Delete guide. La suppression d'un guide entraine la suppression en cascade
+    // randonnees, reservater, concerner
     public function destroy(Guide $guide)
     {
-        // A voir : Effacer un guide effacera en cascade ses randonnées
-        // mais pour le moment les reservations ne seront pas supprimer
-
         $guide->delete();
 
         return redirect('/guides');

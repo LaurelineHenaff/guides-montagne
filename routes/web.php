@@ -40,6 +40,7 @@ Route::post('/users/authenticate', [UserController::class, 'authenticate']);
  * store - Store new guide in database
  * edit - Show form to edit guide
  * update - Update guide in database
+ * delete - Show confirmation form to delete guide
  * destroy - Delete guide from database
  */
 Route::middleware(['auth'])->name('guides')->group(function () {
@@ -48,6 +49,7 @@ Route::middleware(['auth'])->name('guides')->group(function () {
     Route::post('/guides', [GuideController::class, 'store']);
     Route::get('/guides/{guide}/edit', [GuideController::class, 'edit']);
     Route::put('/guides/{guide}', [GuideController::class, 'update']);
+    Route::get('/guides/{guide}/delete', [GuideController::class, 'delete']);
     Route::delete('/guides/{guide}', [GuideController::class, 'destroy']);
 });
 
