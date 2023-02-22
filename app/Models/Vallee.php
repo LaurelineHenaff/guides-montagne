@@ -41,7 +41,7 @@ class Vallee extends Model
     public static function randonnees(Vallee $vallee)
     {
         $randonnees = DB::select(
-            "SELECT CONCAT(guides.nom_Guides, ' ', guides.prenom_Guides) AS nom_guide,
+            "SELECT CONCAT(guides.prenom_Guides, ' ', guides.nom_Guides) AS nom_guide,
                     rando1.dateDebut_Randonnees,
                     rando1.dateFin_Randonnees,
                     (SELECT COUNT(reserver.code_Randonnees)
