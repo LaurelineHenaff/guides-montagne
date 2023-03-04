@@ -1,7 +1,7 @@
 <x-layout>
 
   @auth
-    <h1 class="mb-4">Bienvenu, <small class="small text-secondary">{{ Auth::user()->name }}</small>.</h1>
+    <h1 class="mb-4">Bienvenue, <small class="small text-secondary">{{ Auth::user()->name }}</small>.</h1>
     <p>Vous pouvez régénérer la base de données avec ses données d'origine en 
         exécutant la commande suivante depuis le dossier racine de l'application&nbsp;:</p>
     <code class="bg-dark text-bg-dark p-3 border rounded-2 d-block">
