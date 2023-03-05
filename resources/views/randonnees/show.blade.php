@@ -25,8 +25,8 @@
           <thead>
             <tr>
               <th>Date</th>
-              <th>Abris</th>
               <th>Sommet</th>
+              <th>Abris</th>
               <th>Statut</th>
             </tr>
           </thead>
@@ -36,8 +36,8 @@
             @foreach ($concerner as $c)
               <tr>
                 <td>{{ $c->date_Concerner }}</td>
-                <td>{{ $c->nom_Abris }}</td>
                 <td>{{ $c->nom_Sommets }}</td>
+                <td>{{ $c->nom_Abris }}&nbsp;<sup>[{{ $c->code_Abris }}]</sup></td>
                 <td>{{ $c->statut_Reserver }}</td>
               </tr>
             @endforeach

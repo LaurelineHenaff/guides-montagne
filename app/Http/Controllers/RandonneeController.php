@@ -28,6 +28,7 @@ class RandonneeController extends Controller
                     sommets.nom_Sommets,
                     guides.prenom_Guides,
                     guides.nom_Guides,
+                    abris.code_Abris,
                     abris.nom_Abris,
                     reserver.statut_Reserver
              FROM randonnees, concerner, sommets, guides, reserver, abris
