@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('ascension', function (Blueprint $table) {
             $table->primary(['code_Sommets', 'code_Abris']);
-            $table->string('difficulte_Ascension');
-            $table->string('duree_Ascension');
+            $table->string('difficulte_Ascension')->nullable();
+            $table->string('duree_Ascension')->nullable();
             $table->foreignId('code_Sommets')
                 ->constrained('sommets', 'code_Sommets')
                 ->onDelete('cascade');

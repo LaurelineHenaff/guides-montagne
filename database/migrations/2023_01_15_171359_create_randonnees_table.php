@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('randonnees', function (Blueprint $table) {
             $table->id('code_Randonnees');
-            $table->integer('nbPersonnes_Randonnees');
-            $table->date('dateDebut_Randonnees');
-            $table->date('dateFin_Randonnees');
+            $table->integer('nbPersonnes_Randonnees')->nullable();
+            $table->date('dateDebut_Randonnees')->nullable();
+            $table->date('dateFin_Randonnees')->nullable();
             $table->foreignId('code_Guides')
                 ->constrained('guides', 'code_Guides')
                 ->onDelete('cascade');

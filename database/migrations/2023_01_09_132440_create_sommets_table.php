@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('sommets', function (Blueprint $table) {
             $table->id('code_Sommets');
-            $table->string('nom_Sommets');
-            $table->integer('altitude_Sommets');
+            $table->string('nom_Sommets')->nullable();
+            $table->integer('altitude_Sommets')->nullable();
         });
     }
 

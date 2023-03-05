@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('abris', function (Blueprint $table) {
             $table->id('code_Abris');
-            $table->string('nom_Abris');
-            $table->string('type_Abris');
+            $table->string('nom_Abris')->nullable();
+            $table->string('type_Abris')->nullable();
             // $table->enum('type_Abris', ['cabane', 'refuge']);
-            $table->integer('altitude_Abris');
-            $table->integer('places_Abris');
-            $table->float('prixNuit_Abris');
+            $table->integer('altitude_Abris')->nullable();
+            $table->integer('places_Abris')->nullable();
+            $table->float('prixNuit_Abris')->nullable();
             $table->float('prixRepas_Abris')->nullable();
             $table->string('telGardien_Abris')->nullable();
             $table->foreignId('code_Vallees')
