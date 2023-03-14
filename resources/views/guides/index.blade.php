@@ -26,16 +26,18 @@
             <td>{{ $guide->prenom_Guides }}</td>
             <td>{{ $guide->nom_Guides }}</td>
             <td>{{ $guide->email_Guides }}</td>
-            <td class="d-flex gap-1">
-              <a class="btn btn-primary btn-sm" href="/guides/{{ $guide->code_Guides }}/edit"><i class="bi bi-pencil"></i></a>
-              <a class="btn btn-danger btn-sm" href="/guides/{{ $guide->code_Guides }}/delete"><i class="bi bi-trash"></i></a>
-              {{-- Bouton d'action de suppression sans confirmation --}}
-              {{-- <form action="/guides/{{ $guide->code_Guides }}" method="POST">
-                @csrf
-                @method('DELETE')
+            <td>
+              <div class="d-flex gap-1">
+                <a class="btn btn-primary btn-sm" href="/guides/{{ $guide->code_Guides }}/edit"><i class="bi bi-pencil"></i></a>
+                <a class="btn btn-danger btn-sm" href="/guides/{{ $guide->code_Guides }}/delete"><i class="bi bi-trash"></i></a>
+                {{-- Bouton d'action de suppression sans confirmation --}}
+                {{-- <form action="/guides/{{ $guide->code_Guides }}" method="POST">
+                  @csrf
+                  @method('DELETE')
                 
-                <button class="btn btn-danger btn-sm" type="submit"><i class="bi bi-trash"></i></button> --}}
-              </form>
+                  <button class="btn btn-danger btn-sm" type="submit"><i class="bi bi-trash"></i></button>
+                </form> --}}
+              </div>
             </td>
           </tr>
         @endforeach

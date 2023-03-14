@@ -36,16 +36,18 @@
             <td>{{ $abri->prixRepas_Abris }}</td>
             <td>{{ $abri->telGardien_Abris }}</td>
             <td>{{ $abri->vallee->nom_Vallees }}</td>
-            <td class="d-flex gap-1">
-              <a class="btn btn-primary btn-sm" href="/abris/{{ $abri->code_Abris }}/edit"><i class="bi bi-pencil"></i></a>
-              <a class="btn btn-danger btn-sm" href="/abris/{{ $abri->code_Abris }}/delete"><i class="bi bi-trash"></i></a>
-              {{-- Bouton d'action de suppression sans confirmation --}}
-              {{-- <form action="/abris/{{ $abri->code_Abris }}" method="POST">
-                @csrf
-                @method('DELETE')
+            <td>
+              <div class="d-flex gap-1">
+                <a class="btn btn-primary btn-sm" href="/abris/{{ $abri->code_Abris }}/edit"><i class="bi bi-pencil"></i></a>
+                <a class="btn btn-danger btn-sm" href="/abris/{{ $abri->code_Abris }}/delete"><i class="bi bi-trash"></i></a>
+                {{-- Bouton d'action de suppression sans confirmation --}}
+                {{-- <form action="/abris/{{ $abri->code_Abris }}" method="POST">
+                  @csrf
+                  @method('DELETE')
                 
-                <button class="btn btn-danger btn-sm" type="submit"><i class="bi bi-trash"></i></button>
-              </form> --}}
+                  <button class="btn btn-danger btn-sm" type="submit"><i class="bi bi-trash"></i></button>
+                </form> --}}
+              </div>
             </td>
           </tr>
         @endforeach

@@ -24,16 +24,18 @@
             <td>{{ $sommet->code_Sommets }}</td>
             <td>{{ $sommet->nom_Sommets }}</td>
             <td>{{ $sommet->altitude_Sommets }}</td>
-            <td class="d-flex gap-1">
-              <a class="btn btn-primary btn-sm" href="/sommets/{{ $sommet->code_Sommets }}/edit"><i class="bi bi-pencil"></i></a>
-              <a class="btn btn-danger btn-sm" href="/sommets/{{ $sommet->code_Sommets }}/delete"><i class="bi bi-trash"></i></a>
-              {{-- Bouton d'action de suppression sans confirmation --}}
-              {{-- <form action="/sommets/{{ $sommet->code_Sommets }}" method="POST">
-                @csrf
-                @method('DELETE')
+            <td>
+              <div class="d-flex gap-1">
+                <a class="btn btn-primary btn-sm" href="/sommets/{{ $sommet->code_Sommets }}/edit"><i class="bi bi-pencil"></i></a>
+                <a class="btn btn-danger btn-sm" href="/sommets/{{ $sommet->code_Sommets }}/delete"><i class="bi bi-trash"></i></a>
+                {{-- Bouton d'action de suppression sans confirmation --}}
+                {{-- <form action="/sommets/{{ $sommet->code_Sommets }}" method="POST">
+                  @csrf
+                  @method('DELETE')
                 
-                <button class="btn btn-danger btn-sm" type="submit"><i class="bi bi-trash"></i></button>
-              </form> --}}
+                  <button class="btn btn-danger btn-sm" type="submit"><i class="bi bi-trash"></i></button>
+                </form> --}}
+              </div>
             </td>
           </tr>
         @endforeach

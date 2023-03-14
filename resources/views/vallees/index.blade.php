@@ -22,16 +22,18 @@
           <tr>
             <td>{{ $vallee->code_Vallees }}</td>
             <td>{{ $vallee->nom_Vallees }}</td>
-            <td class="d-flex gap-1">
-              <a class="btn btn-primary btn-sm" href="/vallees/{{ $vallee->code_Vallees }}/edit"><i class="bi bi-pencil"></i></a>
-              <a class="btn btn-danger btn-sm" href="/vallees/{{ $vallee->code_Vallees }}/delete"><i class="bi bi-trash"></i></a>
-              {{-- Bouton d'action de suppression sans confirmation --}}
-              {{-- <form action="/vallees/{{ $vallee->code_Vallees }}" method="POST">
-                @csrf
-                @method('DELETE')
+            <td>
+              <div class="d-flex gap-1">
+                <a class="btn btn-primary btn-sm" href="/vallees/{{ $vallee->code_Vallees }}/edit"><i class="bi bi-pencil"></i></a>
+                <a class="btn btn-danger btn-sm" href="/vallees/{{ $vallee->code_Vallees }}/delete"><i class="bi bi-trash"></i></a>
+                {{-- Bouton d'action de suppression sans confirmation --}}
+                {{-- <form action="/vallees/{{ $vallee->code_Vallees }}" method="POST">
+                  @csrf
+                  @method('DELETE')
                 
-                <button class="btn btn-danger btn-sm" type="submit"><i class="bi bi-trash"></i></button>
-              </form> --}}
+                  <button class="btn btn-danger btn-sm" type="submit"><i class="bi bi-trash"></i></button>
+                </form> --}}
+              </div>
             </td>
           </tr>
         @endforeach

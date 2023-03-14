@@ -24,8 +24,10 @@
             <td>{{ $randonnee->dateFin_Randonnees }}</td>
             <td>{{ $randonnee->nbPersonnes_Randonnees }}</td>
             <td>{{ $randonnee->guide->prenom_Guides }} {{ $randonnee->guide->nom_Guides }}</td>
-            <td class="d-flex gap-1 justify-content-end">
-              <a class="btn btn-success btn-sm" href="/randonnees/{{ $randonnee->code_Randonnees }}"><i class="bi bi-eye"></i></a>
+            <td>
+              <div class="d-flex gap-1 justify-content-end">
+                <a class="btn btn-success btn-sm" href="/randonnees/{{ $randonnee->code_Randonnees }}"><i class="bi bi-eye"></i></a>
+              </div>
             </td>
           </tr>
         @endforeach
