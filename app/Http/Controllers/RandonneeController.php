@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Randonnee;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class RandonneeController extends Controller
@@ -36,8 +35,8 @@ class RandonneeController extends Controller
              AND concerner.code_Sommets = sommets.code_Sommets
              AND randonnees.code_Guides = guides.code_Guides
              AND reserver.code_Abris = abris.code_Abris
-             AND randonnees.code_Randonnees = ?
              AND concerner.date_Concerner = reserver.date_Reserver
+             AND randonnees.code_Randonnees = ?
              ORDER BY concerner.date_Concerner",
             [$randonnee->code_Randonnees]
         );
