@@ -83,10 +83,17 @@ class AbriController extends Controller
     // Update abri
     public function update(Request $req, Abri $abri)
     {
+        // dd($abri->code_Vallees);
         $fields = $req->validate([
             'nom_Abris' => 'required|max:255|unique:abris,nom_Abris,' . $abri->code_Abris . ',code_Abris',
             'type_Abris' => 'in:cabane,refuge',
-            'code_Vallees' => 'required',
+
+            // Pour autoriser le changement de vallée il faudrait gérer les ascensions (et le reste)
+            // qui deviendraient caduques. Du coup on disable le select dans la vue et on s'assure
+            // qu'un petit malin ne change pas le code dans les outils de dev en vérifiant que la
+            // valeur est bien celle d'origine attendue.
+            'code_Vallees' => "in:$abri->code_Vallees",
+
             'altitude_Abris' => 'required',
             'places_Abris' => 'required',
             'prixNuit_Abris' => 'required',

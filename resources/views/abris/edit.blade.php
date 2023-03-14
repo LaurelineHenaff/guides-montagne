@@ -33,7 +33,7 @@
       <div class="col">
         {{-- Select de la Vallée de l'abris --}}
         <label class="form-label" for="code_Vallees">Vallée<sup>&nbsp;*</sup></label>
-        <select id="code_Vallees" class="form-select form-select-sm mb-1" name="code_Vallees">
+        <select id="code_Vallees" class="form-select form-select-sm mb-1" name="code_Vallees" disabled>
           @foreach ($vallees as $vallee)
           @php
             $selected = (old('code_Vallees') ?? $vallee->code_Vallees) == $abri->code_Vallees ? 'selected' : '';
@@ -41,6 +41,9 @@
             <option value="{{ $vallee->code_Vallees }}" {{$selected}}>{{ $vallee->nom_Vallees }}</option>
           @endforeach
         </select>
+        @error('code_Vallees')
+          <p class="text-danger small mt-1 mb-0">{{ $message }}</p>
+        @enderror
       </div>
     </div>
 
