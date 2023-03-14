@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreignId('code_Randonnees')
                 ->constrained('randonnees', 'code_Randonnees')
                 ->onDelete('cascade');
-            $table->date('date_Reserver')->nullable();
+            $table->date('date_Reserver');
             $table->string('statut_Reserver')->nullable();
 
             $table->index(['code_Abris', 'code_Randonnees']);
