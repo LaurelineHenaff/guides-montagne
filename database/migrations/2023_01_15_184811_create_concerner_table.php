@@ -14,16 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('concerner', function (Blueprint $table) {
-            $table->primary(['code_Sommets', 'code_Randonnees']);
+            $table->primary(['code_Sommets', 'code_Randonnees', 'date_Concerner']);
             $table->foreignId('code_Sommets')
                 ->constrained('sommets', 'code_Sommets')
                 ->onDelete('cascade');
             $table->foreignId('code_Randonnees')
                 ->constrained('randonnees', 'code_Randonnees')
                 ->onDelete('cascade');
-            $table->date('date_Concerner')->nullable();
+            $table->date('date_Concerner');
 
-            $table->index(['code_Sommets', 'code_Randonnees']);
+            $table->index(['code_Sommets', 'code_Randonnees', 'date_Concerner']);
         });
     }
 
