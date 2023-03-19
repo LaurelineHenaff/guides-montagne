@@ -77,7 +77,7 @@
     <div id="info-type_Abris" class="row mt-2">
       <div class="col">
         {{-- Prix des repas dans le refuge --}}
-        <label class="form-label" for="prixRepas_Abris">Prix Repas (€)<sup>&nbsp;-</sup></label>
+        <label class="form-label" for="prixRepas_Abris">Prix Repas (€)<sup>&nbsp;*</sup></label>
         <input id="prixRepas_Abris" class="form-control form-control-sm mb-1" type="text" name="prixRepas_Abris" value="{{ old('prixRepas_Abris') ?? $abri->prixRepas_Abris }}">
         @error('prixRepas_Abris')
           <p class="text-danger small mt-1 mb-0">{{ $message }}</p>
@@ -85,7 +85,7 @@
       </div>
       <div class="col">
         {{-- Téléphone du gardien du refuge --}}
-        <label class="form-label" for="telGardien_Abris">Téléphone Gardien<sup>&nbsp;-</sup></label>
+        <label class="form-label" for="telGardien_Abris">Téléphone Gardien<sup>&nbsp;*</sup></label>
         <input id="telGardien_Abris" class="form-control form-control-sm mb-1" type="text" name="telGardien_Abris" value="{{ old('telGardien_Abris') ?? $abri->telGardien_Abris }}">
         @error('telGardien_Abris')
           <p class="text-danger small mt-1 mb-0">{{ $message }}</p>
