@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('reserver', function (Blueprint $table) {
-            $table->primary(['code_Abris', 'code_Randonnees']);
+            $table->primary(['code_Abris', 'code_Randonnees', 'date_Reserver']);
             $table->foreignId('code_Abris')
                 ->constrained('abris', 'code_Abris')
                 ->onDelete('cascade');
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->date('date_Reserver');
             $table->string('statut_Reserver')->nullable();
 
-            $table->index(['code_Abris', 'code_Randonnees']);
+            $table->index(['code_Abris', 'code_Randonnees', 'date_Reserver']);
         });
     }
 
