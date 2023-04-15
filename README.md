@@ -28,7 +28,7 @@ Installer les dépendances :
 composer update
 ```
 
-Créer la base de donnée vide (par exemple `guidesmontagne`), interclassement: utf8mb4_general_ci.
+Créer la base de donnée vide (par exemple `guidesmontagne`), interclassement: `utf8mb4_general_ci`.
 
 Copier le fichier `.env.exemple` et renommer la copie en `.env`
 
@@ -47,6 +47,8 @@ php artisan migrate:fresh --seed
 ```
 
 Créer le `VirtualHost` qui pointe vers le dossier `/public` du projet.
+
+Mettre à jour votre fichier `hosts` si nécessaire.
 
 Fin.
 
