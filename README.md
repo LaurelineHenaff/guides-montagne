@@ -28,7 +28,7 @@ Installer les dépendances :
 composer update
 ```
 
-Créer la base de donnée vide (par exemple `guidesmontagne`).
+Créer la base de donnée vide (par exemple `guidesmontagne`), interclassement: utf8mb4_general_ci.
 
 Copier le fichier `.env.exemple` et renommer la copie en `.env`
 
