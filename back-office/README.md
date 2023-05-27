@@ -1,8 +1,6 @@
-# Projet RTAI en chantier...
+# La Compagnie des Guides
 
-## La Compagnie des Guides
-
-### Back-office avec Laravel
+## Back-office avec Laravel
 
 _Laurine, Laureline, Christophe._
 
